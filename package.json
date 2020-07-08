@@ -1,0 +1,27 @@
+{
+  "name": "regexp-engine",
+  "version": "1.0.0",
+  "description": "A regular expression engine library written in JS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GreatDeveloper66/RegExp-Engine.git"
+  },
+  "keywords": [
+    "Regular",
+    "Expressions",
+    "User",
+    "Interfact",
+    "Text",
+    "Search"
+  ],
+  "author": "Adam Shaffer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GreatDeveloper66/RegExp-Engine/issues"
+  },
+  "homepage": "https://github.com/GreatDeveloper66/RegExp-Engine#readme"
+}
