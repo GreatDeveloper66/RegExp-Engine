@@ -1,26 +1,24 @@
 const readline = require('readline')
 const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
+  input: process.stdin,
+  output: process.stdout
 })
 const ask = query => new Promise((resolve,reject) => {
-    rl.question(query, answer => resolve(answer))
+  rl.question(query, answer => resolve(answer))
 })
-let text = ''
-let pattern = ''
+
+let [pattern, text ] = ['','']
+
 ask("Input Regular Expression Pattern\n")
-    .then((result) => {
-        pattern = result
-        return ask("Input Text\n")
+  .then(result => { 
+      pattern = result
+      return ask("Input Text to Match Against Pattern\n")
     })
-    .then(result => {
-        text = result
-        rl.close()
-    })
-    .then(() => {
-        console.log(test(pattern,text))
-    })
-    .catch(error => console.log(error))
+   .then(text => {
+       rl.close()
+       console.log(test(pattern, text))
+   })
+  .catch(error => console.log(error))
 
 function test(pattern,text){
     
