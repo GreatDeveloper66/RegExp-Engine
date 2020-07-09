@@ -4,6 +4,19 @@ const rl = readline.createInterface({
     output: process.stdout
 })
 
-rl.question("How do you like Node?", answer => {
+const pattern = rl.question("Input Regular Expression Pattern ", answer => {
     console.log(`Your answer is ${answer}`)
 })
+
+console.log(pattern)
+
+function test(pattern,text){
+    let i = 0
+    let j = 0
+    for(let i = 0;i < text.length;i++){
+        if(text.charAt[i] === pattern[0]){
+            
+        }
+    }
+    return false
+}
