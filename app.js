@@ -6,36 +6,37 @@ const rl = readline.createInterface({
 const ask = query => new Promise((resolve,reject) => {
     rl.question(query, answer => resolve(answer))
 })
-
-ask("Input Regular Expression Pattern")
+let text = ''
+let pattern = ''
+ask("Input Regular Expression Pattern\n")
     .then((result) => {
-        console.log(result)
+        pattern = result
         return ask("Input Text")
     })
     .then(result => {
-        console.log(result)
+        text = result
         rl.close()
     })
-    .catch(error => console.log(error))
-/*
-rl.question("Input Regular Expression Pattern ", answer => {
-    console.log(`Your answer is ${answer}`)
-    
-}).then(() => {
-    rl.question("Enter Text", answer => {
-        console.log(answer)
+    .then(() => {
+        console.log(text)
+        console.log(pattern)
     })
-})
-*/
-
+    .catch(error => console.log(error))
 
 function test(pattern,text){
+    
     let i = 0
-    let j = 0
-    for(let i = 0;i < text.length;i++){
+    while(i < text.length) {
         if(text.charAt[i] === pattern[0]){
-            
+            let j = 1
+            while(j < pattern.length && pattern[j] === text.charAt[i + j]){
+                j += 1
+            }
+            if(j === pattern.length){
+                return true
+            }
         }
+        i += 1
     }
     return false
 }
