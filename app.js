@@ -3,12 +3,31 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 })
-
-const pattern = rl.question("Input Regular Expression Pattern ", answer => {
-    console.log(`Your answer is ${answer}`)
+const ask = query => new Promise((resolve,reject) => {
+    rl.question(query, answer => resolve(answer))
 })
 
-console.log(pattern)
+ask("Input Regular Expression Pattern")
+    .then((result) => {
+        console.log(result)
+        return ask("Input Text")
+    })
+    .then(result => {
+        console.log(result)
+        rl.close()
+    })
+    .catch(error => console.log(error))
+/*
+rl.question("Input Regular Expression Pattern ", answer => {
+    console.log(`Your answer is ${answer}`)
+    
+}).then(() => {
+    rl.question("Enter Text", answer => {
+        console.log(answer)
+    })
+})
+*/
+
 
 function test(pattern,text){
     let i = 0
