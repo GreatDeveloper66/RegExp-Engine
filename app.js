@@ -21,7 +21,6 @@ ask("Input Regular Expression Pattern\n")
   .catch(error => console.log(error))
 
 function test(pattern,text){
-    
     let i = 0
     while(i < text.length) {
         if(text.charAt(i) === pattern[0]){
