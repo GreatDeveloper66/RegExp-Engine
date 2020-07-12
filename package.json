@@ -1,5 +1,6 @@
 {
   "name": "regexp-engine",
+  "type": "module",
   "version": "1.0.0",
   "description": "A regular expression engine library written in JS",
   "main": "app.js",
