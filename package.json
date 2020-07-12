@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/GreatDeveloper66/RegExp-Engine/issues"
   },
-  "homepage": "https://github.com/GreatDeveloper66/RegExp-Engine#readme"
+  "homepage": "https://github.com/GreatDeveloper66/RegExp-Engine#readme",
+  "devDependencies": {
+    "jest": "^26.1.0"
+  }
 }
