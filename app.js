@@ -1,5 +1,5 @@
 import readline from 'readline'
-import  test from './test.js'
+import  test from './test'
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
