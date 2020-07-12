@@ -1,5 +1,5 @@
-const readline = require('readline')
-const { test } = require("./test")
+import readline from 'readline'
+import  test from './test.js'
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
