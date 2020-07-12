@@ -1,4 +1,4 @@
-function test(pattern, text) {
+export default function test(pattern, text) {
   let i = 0;
   while (i < text.length) {
     if (text.charAt(i) === pattern[0] || pattern[0] === '.') {
@@ -17,4 +17,4 @@ function test(pattern, text) {
   }
   return false;
 }
-exports.test = test;
+//exports.test = test;
