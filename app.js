@@ -1,5 +1,5 @@
 import readline from 'readline'
-import  test from './regtest.js'
+import regtest from './regtest.js'
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
@@ -17,7 +17,7 @@ ask("Input Regular Expression Pattern\n")
     })
    .then(text => {
        rl.close()
-       console.log(test(pattern, text))
+       console.log(regtest(pattern, text))
    })
   .catch(error => console.log(error))
 
