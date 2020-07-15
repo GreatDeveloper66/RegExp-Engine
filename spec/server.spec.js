@@ -25,3 +25,25 @@ describe('regular expression tests with literal characters', () => {
         expect(regtest('bblrr', 'randombb&rrandomstuff')).toBe(false)
     })
 })
+
+describe('regular expression tests with wildcard characters', () => {
+    it('should return true for beginning match', () => {
+        expect(regtest('bb..rr','bb&&rrrandomstuff')).toBe(true)
+    })
+    it('should return true for middle match', () => {
+        expect(regtest('bb..rr', 'randombb&&rrstuff')).toBe(true)
+    })
+    it('should return true for end match', () => {
+        expect(regtest('bb..rr','aaaaaaaabb&&rr')).toBe(true)
+    })
+    it('should return false for beginning match', () => {
+        expect(regtest('bb..rr', 'b&&rrlllll')).toBe(false)
+    })
+    it('should return false for middle match', () => {
+        expect(regtest('bb.rr','lllllbb&&ryyy')).toBe(false)
+    })
+    it('should return false for end match', () => {
+        expect(regtest('bb.rr','lllllbb&')).toBe(false)
+    })
+})
+
