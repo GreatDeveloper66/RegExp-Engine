@@ -26,7 +26,7 @@ export default function regtest(pattern, text) {
           }
           patternCounter += 1
         }
-        else if((pattern[patternCounter + 1] === '*') {
+        else if(pattern[patternCounter + 1] === '*') {
             if(pattern[patternCounter] !== text[innerCounter]){
               innerCounter -= 1
             }
@@ -37,8 +37,8 @@ export default function regtest(pattern, text) {
             }
             patternCounter += 1
         }
-        else {
-          if(pattern[patternCounter + 1] === '+'){
+        else if(pattern[patternCounter + 1] === '+') {
+          
             if(text[innerCounter] !== pattern[patternCounter]){
               break
             }
@@ -48,7 +48,19 @@ export default function regtest(pattern, text) {
               }
             }
             patternCounter += 1
+        }
+        else if(pattern[patternCounter] === '^'){
+          if(text[innerCounter - 1]){
+            break
           }
+        }
+        else if(pattern[patternCounter] === '$'){
+          if(text[innerCounter + 1]){
+            break
+          }
+        }
+        else {
+
         }
         innerCounter += 1
         patternCounter += 1
