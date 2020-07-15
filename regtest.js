@@ -52,4 +52,4 @@ export default function regtest(pattern, text) {
   return false
 }
 //exports.regtest = regtest;
-module.exports = regtest
+//module.exports = regtest
