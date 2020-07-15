@@ -1,10 +1,16 @@
 {
   "name": "regexp-engine",
+  "type": "module",
   "version": "1.0.0",
   "description": "A regular expression engine library written in JS",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
   },
   "repository": {
     "type": "git",
@@ -23,5 +29,10 @@
   "bugs": {
     "url": "https://github.com/GreatDeveloper66/RegExp-Engine/issues"
   },
-  "homepage": "https://github.com/GreatDeveloper66/RegExp-Engine#readme"
+  "homepage": "https://github.com/GreatDeveloper66/RegExp-Engine#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.10.4",
+    "babel-jest": "^26.1.0",
+    "jest": "^26.1.0"
+  }
 }
