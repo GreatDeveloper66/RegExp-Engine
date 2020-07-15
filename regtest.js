@@ -1,4 +1,4 @@
-function test(pattern, text) {
+export default function regtest(pattern, text) {
   //pattern is the regular expression pattern to match against
   //text is the text with which to find the regular expression pattern
   //textCounter-the counter that points to the place in the text the engine is checking
@@ -26,6 +26,20 @@ function test(pattern, text) {
           }
           patternCounter += 1
         }
+        else {
+          if(pattern[patternCounter + 1] === '*'){
+            if(pattern[patternCounter] !== text[innerCounter]){
+              innerCounter -= 1
+            }
+            else {
+              while(pattern[patternCounter] === text[innerCounter + 1]){
+                innerCounter += 1
+              }
+            }
+            patternCounter += 1
+          }
+        }
+
         innerCounter += 1
         patternCounter += 1
       }
@@ -37,5 +51,5 @@ function test(pattern, text) {
   }
   return false
 }
-//exports.test = test;
-module.exports = test
+//exports.regtest = regtest;
+module.exports = regtest
