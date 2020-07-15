@@ -47,3 +47,24 @@ describe('regular expression tests with wildcard characters', () => {
     })
 })
 
+describe('regular expression tests with ? special character',() => {
+    it('should return true for beginning match',() => {
+        expect(regtest('ab?cd?ef','acdefg')).toBe(true)
+    })
+    it('should return true for middle match', () => {
+        expect(regtest('ab?cd?ef','lllllacdefggggg')).toBe(true)
+    })
+    it('should return true for end match', () => {
+        expect(regtest('ab?cd?ef','lllllmmmacdef')).toBe(true)
+    })
+    it('should return false for beginning match', () => {
+        expect(regtest('ab?cd?ef','aclllllll')).toBe(false)
+    })
+    it('should return false for middle match', () => {
+        expect(regtest('ab?cd?ef', 'lllacllll')).toBe(false)
+    })
+    it('should return false for end match', () => {
+        expect(regtest('ab?cd?ef', 'llaclllac')).toBe(false)
+    })
+
+})
