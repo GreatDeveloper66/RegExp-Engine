@@ -18,7 +18,7 @@ function test(pattern, text) {
       while(patternCounter < pattern.length &&
         (pattern[patternCounter] === text[innerCounter]
           || pattern[patternCounter] === '.'
-          || pattern[patternCounter + 1] === '?'
+          || specialcharacters.includes(pattern[patternCounter + 1])
         )){
         if(pattern[patternCounter + 1] === '?'){
           if(pattern[patternCounter] !== text[innerCounter]){
