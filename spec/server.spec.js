@@ -68,6 +68,21 @@ describe('regular expression tests with ? special character',() => {
     })
 })
 
+describe('regular expression test with special character +', () => {
+    it('should return true for beginning match', () => {
+        expect(regtest('a+kkk','aaaakkkllll')).toBe(true)
+    })
+    it('should return true for middle match', () => {
+        expect(regtest('akl+jj','akllllljj')).toBe(true)
+    })
+    it('should return true for end match', () => {
+        expect(regtest('aklj+','jytuakljjjjjjj')).toBe(true)
+    })
+    it('should return false', () => {
+        expect(regtest('a+','bbbkkcc')).toBe(false)
+    })
+})
+
 describe('regular expressions tests with combinations of symbols', () => {
     it('should return true', () => {
         expect(regtest('a...b?cd?ef.', 'llla&&&cdef9llll')).toBe(true)
