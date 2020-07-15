@@ -76,3 +76,15 @@ describe('regular expressions tests with combinations of symbols', () => {
         expect(regtest('a...b?cd?ef.','lllacdllllll')).toBe(false)
     })
 })
+
+describe('regular expression test with special character *', () => {
+    it('should return true with repeating', () => {
+        expect(regtest('ab*cddd','eeeabbbbbcdddeee')).toBe(true)
+    })
+    it('should return true without repeating', () => {
+        expect(regtest('ab*cddd','eeeacdddllll')).toBe(true)
+    })
+    it('should return false',() => {
+        expect(regtest('ab*cddd','eeeabddllll')).toBe(false)
+    })
+})
