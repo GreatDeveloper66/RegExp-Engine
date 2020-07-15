@@ -1,4 +1,4 @@
-export default function test(pattern, text) {
+function test(pattern, text) {
   //pattern is the regular expression pattern to match against
   //text is the text with which to find the regular expression pattern
   //textCounter-the counter that points to the place in the text the engine is checking
@@ -38,3 +38,4 @@ export default function test(pattern, text) {
   return false
 }
 //exports.test = test;
+module.exports = test
