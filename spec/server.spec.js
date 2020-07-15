@@ -1,6 +1,7 @@
-const test = require('../test')
+const regtest = require("../regtest")
+console.log(test)
 describe('regular expression test A', () => {
     it('should return true', () => {
-        expect(test('bb.rr','aabblrrccc')).toBe(true)
+        expect(regtest('bb.rr','aabblrrccc')).toBe(true)
     })
 })
