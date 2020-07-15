@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/GreatDeveloper66/RegExp-Engine#readme",
   "devDependencies": {
+    "babel-jest": "^26.1.0",
     "jest": "^26.1.0"
   }
 }
