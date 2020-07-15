@@ -1,6 +1,5 @@
 {
     "spec_dir": "spec",
-    "type": "module",
     "spec_files": [
       "**/*[sS]pec.js"
     ],

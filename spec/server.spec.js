@@ -1,5 +1,5 @@
-const regtest = require("../regtest")
-console.log(test)
+import regtest from '../regtest.js'
+
 describe('regular expression tests with literal characters', () => {
     it('should return true for beginning match', () => {
         expect(regtest('bblrr','bblrrcccaa')).toBe(true)
