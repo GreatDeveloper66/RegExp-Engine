@@ -6,6 +6,7 @@ export default function test(pattern, text) {
   //being checked
   //innerCounter-the counter of the inner loop for the current place in the text being
   //checked against patternCounter
+  const specialcharacters = ['?','+','*','^','$']
   let textCounter = 0
   while(textCounter < text.length){
     let patternCounter = 0
