@@ -49,34 +49,6 @@ export default function regtest(pattern, text) {
             }
             patternCounter += 1
         }
-        /*
-        else if(pattern[patternCounter] === '^'){
-          if(text[innerCounter - 1]){
-            break
-          }
-          else {
-            if(pattern[patternCounter + 1] === text[innerCounter]){
-              patternCounter += 1
-            }
-            else {
-              break
-            }
-          }
-        }
-        else if(pattern[patternCounter + 1] === '$'){
-          if(text[innerCounter + 1]){
-            break
-          }
-          else {
-            if(pattern[patternCounter] === text[innerCounter]){
-              patternCounter += 1
-            }
-            else {
-              break
-            }
-          }
-        }
-        */
         else {
 
         }
