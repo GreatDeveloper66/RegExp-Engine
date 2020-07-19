@@ -49,12 +49,12 @@ export default function regtest(pattern, text) {
             }
             patternCounter += 1
         }
-        else if(pattern[patternCounter + 1] === '^'){
+        else if(pattern[patternCounter] === '^'){
           if(text[innerCounter - 1]){
             break
           }
           else {
-            if(pattern[patternCounter] === text[innerCounter]){
+            if(pattern[patternCounter + 1] === text[innerCounter]){
               patternCounter += 1
             }
             else {
