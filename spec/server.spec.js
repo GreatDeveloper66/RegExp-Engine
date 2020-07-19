@@ -96,6 +96,12 @@ describe('regular expression tests with $ and ^ characters', () => {
     it('should return false $', () => {
         expect(regtest('aaa$','bbbdddaaay')).toBe(false)
     })
+    it('should return true $ and ^', () => {
+        expect(regtest('^a$'),'a').toBe(true)
+    })
+    it('should return false $ and ^', () => {
+        expect(regtest('^b$'),'a').toBe(false)
+    })
 })
 
 describe('regular expressions tests with combinations of symbols', () => {
