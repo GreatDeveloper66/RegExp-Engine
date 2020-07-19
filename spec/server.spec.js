@@ -83,15 +83,6 @@ describe('regular expression test with special character +', () => {
     })
 })
 
-describe('regular expressions tests with combinations of symbols', () => {
-    it('should return true', () => {
-        expect(regtest('a...b?cd?ef.', 'llla&&&cdef9llll')).toBe(true)
-    })
-    it('should return false', () => {
-        expect(regtest('a...b?cd?ef.','lllacdllllll')).toBe(false)
-    })
-})
-
 describe('regular expression test with special character *', () => {
     it('should return true with repeating', () => {
         expect(regtest('ab*cddd','eeeabbbbbcdddeee')).toBe(true)
@@ -102,4 +93,20 @@ describe('regular expression test with special character *', () => {
     it('should return false',() => {
         expect(regtest('ab*cddd','eeeabddllll')).toBe(false)
     })
+
+    describe('regular expressions tests with combinations of symbols', () => {
+        it('should return true', () => {
+            expect(regtest('a...b?cd?ef.', 'llla&&&cdef9llll')).toBe(true)
+        })
+        it('should return false', () => {
+            expect(regtest('a...b?cd?ef.','lllacdllllll')).toBe(false)
+        })
+        it('should return true', () => {
+            expect(regtest('a..b?cd?efa+','allcefaaaaa')).toBe(true)
+        })
+        it('should return false', () => {
+            expect(regtest('a..b?cd?efa+','albcdef')).toBe(false)
+        })
+    })
+
 })
