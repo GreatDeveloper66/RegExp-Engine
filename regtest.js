@@ -12,7 +12,6 @@ export default function regtest(pattern, text) {
     let patternCounter = 0
     if(text[textCounter] === pattern[0]
       || pattern[0] === '.'
-      || pattern[patternCounter + 1] === '?'
       ){
       let innerCounter = textCounter
       while(patternCounter < pattern.length &&
@@ -49,9 +48,7 @@ export default function regtest(pattern, text) {
             }
             patternCounter += 1
         }
-        else {
-
-        }
+        
         innerCounter += 1
         patternCounter += 1
       }

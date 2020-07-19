@@ -83,29 +83,6 @@ describe('regular expression test with special character +', () => {
     })
 })
 
-describe('regular expression tests with $ and ^ characters', () => {
-    it('should return true ^', () => {
-        expect(regtest('^aaa','aaabbbc')).toBe(true)
-    })
-    /*
-    it('should return true $', () => {
-        expect(regtest('aaa$','bbbdddaaa')).toBe(true)
-    })
-    it('should return false ^', () => {
-        expect(regtest('^aaa','yaaabbbc')).toBe(false)
-    })
-    it('should return false $', () => {
-        expect(regtest('aaa$','bbbdddaaay')).toBe(false)
-    })
-    it('should return true $ and ^', () => {
-        expect(regtest('^a$'),'a').toBe(true)
-    })
-    it('should return false $ and ^', () => {
-        expect(regtest('^b$'),'a').toBe(false)
-    })
-    */
-})
-
 describe('regular expressions tests with combinations of symbols', () => {
     it('should return true', () => {
         expect(regtest('a...b?cd?ef.', 'llla&&&cdef9llll')).toBe(true)
