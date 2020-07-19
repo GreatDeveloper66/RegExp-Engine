@@ -49,6 +49,7 @@ export default function regtest(pattern, text) {
             }
             patternCounter += 1
         }
+        /*
         else if(pattern[patternCounter] === '^'){
           if(text[innerCounter - 1]){
             break
@@ -75,6 +76,7 @@ export default function regtest(pattern, text) {
             }
           }
         }
+        */
         else {
 
         }
