@@ -12,6 +12,7 @@ export default function regtest(pattern, text) {
     let patternCounter = 0
     if(text[textCounter] === pattern[0]
       || pattern[0] === '.'
+      || pattern[0] === '^'
       ){
       let innerCounter = textCounter
       while(patternCounter < pattern.length &&
