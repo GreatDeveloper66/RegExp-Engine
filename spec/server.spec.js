@@ -109,4 +109,13 @@ describe('regular expression test with special character *', () => {
         })
     })
 
+    describe('regular expression tests for ^ special character', () => {
+        it('should return true', () => {
+            expect(regtest('^aaa','aaabbb')).toBe(true)
+        })
+        it('should return false', () => {
+            expect(regtest('^aaa','caaadd')).toBe(false)
+        })
+    })
+
 })
