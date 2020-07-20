@@ -117,5 +117,8 @@ describe('regular expression test with special character *', () => {
             expect(regtest('^aaa','caaadd')).toBe(false)
         })
     })
+    describe('regular expressin tests for $ special character', () => {
+        it()
+    })
 
 })
