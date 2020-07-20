@@ -55,7 +55,7 @@ export default function regtest(pattern, text) {
             break
           }
           else {
-            patternCounter += 1
+            return true
           }
         }
         else if(pattern[patternCounter] === '^'){
