@@ -18,6 +18,7 @@ export default function regtest(pattern, text) {
         (pattern[patternCounter] === text[innerCounter]
           || pattern[patternCounter] === '.'
           || specialcharacters.includes(pattern[patternCounter + 1])
+          || pattern[patternCounter] === '^'
         )){
         if(pattern[patternCounter + 1] === '?'){
           if(pattern[patternCounter] !== text[innerCounter]){
@@ -49,6 +50,7 @@ export default function regtest(pattern, text) {
             patternCounter += 1
         }
         else if(pattern[patternCounter] === '^'){
+          console.log('^^^^^^^')
           if(text[textCounter - 1] || pattern[patternCounter + 1] !== text[textCounter]){
             break
           }
