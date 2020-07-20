@@ -50,8 +50,15 @@ export default function regtest(pattern, text) {
             }
             patternCounter += 1
         }
+        else if(pattern[patternCounter + 1] === '$'){
+          if(text[textCounter + 1] || pattern[patternCounter] !== text[textCounter]){
+            break
+          }
+          else {
+            patternCounter += 1
+          }
+        }
         else if(pattern[patternCounter] === '^'){
-          console.log('^^^^^^^')
           if(text[textCounter - 1] || pattern[patternCounter + 1] !== text[textCounter]){
             break
           }
@@ -59,6 +66,7 @@ export default function regtest(pattern, text) {
             patternCounter += 1
           }
         }
+
         
         innerCounter += 1
         patternCounter += 1
