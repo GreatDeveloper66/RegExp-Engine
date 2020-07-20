@@ -12,7 +12,6 @@ export default function regtest(pattern, text) {
     let patternCounter = 0
     if(text[textCounter] === pattern[0]
       || pattern[0] === '.'
-      || pattern[patternCounter + 1] === '?'
       ){
       let innerCounter = textCounter
       while(patternCounter < pattern.length &&
@@ -26,8 +25,7 @@ export default function regtest(pattern, text) {
           }
           patternCounter += 1
         }
-        else {
-          if(pattern[patternCounter + 1] === '*'){
+        else if(pattern[patternCounter + 1] === '*') {
             if(pattern[patternCounter] !== text[innerCounter]){
               innerCounter -= 1
             }
@@ -37,9 +35,20 @@ export default function regtest(pattern, text) {
               }
             }
             patternCounter += 1
-          }
         }
-
+        else if(pattern[patternCounter + 1] === '+') {
+          
+            if(text[innerCounter] !== pattern[patternCounter]){
+              break
+            }
+            else {
+              while(pattern[patternCounter] === text[innerCounter + 1]){
+                innerCounter += 1
+              }
+            }
+            patternCounter += 1
+        }
+        
         innerCounter += 1
         patternCounter += 1
       }
